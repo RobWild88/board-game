@@ -1,0 +1,48 @@
+:root {
+  --grid-size: 8;
+  --square-size: 50px;
+  --border-size: 12px;
+  --dark-color: #769656;
+  --light-color: #eeeed2;
+  --border-color: #969256;
+  --label-color: #00000080;
+}
+
+.chessboard {
+  display: grid;
+  grid-template-rows: repeat(var(--grid-size), var(--square-size));
+  width: calc(var(--grid-size) * var(--square-size));
+  height: calc(var(--grid-size) * var(--square-size));
+  border: var(--border-size) outset var(--border-color);
+  margin: 0 auto;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: repeat(var(--grid-size), var(--square-size));
+}
+
+.cell {
+  width: var(--square-size);
+  height: var(--square-size);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cell::before {
+  content: attr(id);
+  color: var(--label-color);
+}
+
+/* dark squares */
+.row:nth-child(even) .cell:nth-child(odd),
+.row:nth-child(odd) .cell:nth-child(even) {
+  background-color: var(--dark-color);
+}
+
+/* light squares */
+.row:nth-child(even) .cell:nth-child(even),
+.row:nth-child(odd) .cell:nth-child(odd) {
+  background-color: var(--light-color);
+}
