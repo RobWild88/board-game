@@ -15,11 +15,12 @@ function logic(
 
 let board2 = Chessboard('board2', {
   draggable: true,
-  dropOffBoard: 'trash',
+  dropOffBoard: 'snapback',
   sparePieces: true,
   onDrop: logic
 })
 
 $('#startBtn').on('click', board2.start)
 $('#clearBtn').on('click', board2.clear)
+$('#changeBtn').on('click', board2.flip)
 board2.start()
