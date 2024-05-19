@@ -8,9 +8,19 @@ function logic(
   console.log("oldPosition", oldPosition)
   console.log("orientation", orientation)
   console.log("------------")
-  //return "snapback"
-}
 
+
+  
+  //const move = game.move({
+  //  from: source,
+  //  to: target,
+  //  promotion: 'q' //automatically promtes to queen for simplicity
+  //});
+  //if (move === null) return 'snapback';
+  //updateStatus();
+  
+  //return "snapback" to cause piece to go back if move is not valid
+}
 
 
 let board2 = Chessboard('board2', {
